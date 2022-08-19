@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "cart": "apps/cart",
+    "find": "apps/find",
     "products": "apps/products",
     "products-e2e": "apps/products-e2e",
     "search": "apps/search",

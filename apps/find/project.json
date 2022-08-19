@@ -1,16 +1,16 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/shell/src",
+  "sourceRoot": "apps/find/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/shell",
-        "main": "apps/shell/src/main.ts",
-        "tsConfig": "apps/shell/tsconfig.app.json",
-        "assets": ["apps/shell/src/assets"]
+        "outputPath": "dist/apps/find",
+        "main": "apps/find/src/main.ts",
+        "tsConfig": "apps/find/tsconfig.app.json",
+        "assets": ["apps/find/src/assets"]
       },
       "configurations": {
         "production": {
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/shell/src/environments/environment.ts",
-              "with": "apps/shell/src/environments/environment.prod.ts"
+              "replace": "apps/find/src/environments/environment.ts",
+              "with": "apps/find/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,11 +29,11 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "shell:build"
+        "buildTarget": "find:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "shell:build:production"
+          "buildTarget": "find:build:production"
         }
       }
     },
@@ -41,26 +41,15 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/shell/**/*.ts"]
+        "lintFilePatterns": ["apps/find/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/shell"],
+      "outputs": ["coverage/apps/find"],
       "options": {
-        "jestConfig": "apps/shell/jest.config.ts",
+        "jestConfig": "apps/find/jest.config.ts",
         "passWithNoTests": true
-      }
-    },
-    "dev": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": [
-          "nx serve shell",
-          "nx serve products",
-          "nx serve find",
-          "nx dev cart"
-        ]
       }
     }
   },
