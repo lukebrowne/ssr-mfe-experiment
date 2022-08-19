@@ -1,5 +1,29 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      .spin {
+        animation: spin 1s linear infinite;
+      }
+      .blink {
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      @keyframes spin {
+        50% {
+          opacity: 0;
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
   <body>
     <header
       style="
