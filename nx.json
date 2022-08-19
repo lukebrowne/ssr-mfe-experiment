@@ -37,5 +37,19 @@
       }
     }
   },
-  "defaultProject": "search"
+  "defaultProject": "search",
+  "targetDependencies": {
+    "dev": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ],
+    "start": [
+      {
+        "target": "build",
+        "projects": "self"
+      }
+    ]
+  }
 }

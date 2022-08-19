@@ -22,7 +22,10 @@ export default function Products({ params }) {
         .map((product, index) => (
           <li key={index}>
             {product.name} - {formatter.format(product.price)}
-            <button type="button">Add to Cart</button>
+            <form method="POST" action="http://localhost:3000?index">
+              <input hidden name="productId" value={product.name} readOnly />
+              <button type="submit">Add to Cart</button>
+            </form>
           </li>
         ))}
     </ul>

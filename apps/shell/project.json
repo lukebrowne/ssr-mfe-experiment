@@ -51,6 +51,17 @@
         "jestConfig": "apps/shell/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx serve shell",
+          "nx serve products",
+          "nx serve search",
+          "nx dev cart"
+        ]
+      }
     }
   },
   "tags": []
