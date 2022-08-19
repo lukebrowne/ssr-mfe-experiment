@@ -1508,7 +1508,7 @@
     webpack "^4 || ^5"
     webpack-node-externals "^3.0.0"
 
-"@nrwl/devkit@14.5.7":
+"@nrwl/devkit@14.5.7", "@nrwl/devkit@^14.4.2":
   version "14.5.7"
   resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-14.5.7.tgz#e80f21e556eceafede2493efcaf5399ec69c3787"
   integrity sha512-ls28Y1xz/wwlmTL3Wk6Th3NcUPrFuc8K3xept2dgD9oRZTnW/DdC3nLzjov8xqBJ1DrxFVOG5a+FmPc7UENj/g==
@@ -1550,7 +1550,7 @@
     rxjs "^6.5.4"
     tslib "^2.3.0"
 
-"@nrwl/js@14.5.7":
+"@nrwl/js@14.5.7", "@nrwl/js@^14.4.2":
   version "14.5.7"
   resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-14.5.7.tgz#65e0843be2aea49fc83266c28337aff39ee58760"
   integrity sha512-z3uAsAEonMGFZnXcl76zPPd0q1LQtkbeF40aFP0iJXZwQumPYolPAU1peaDYq7wzLbk2QVsmt44pBsOy+/wJlA==
@@ -1636,7 +1636,7 @@
     webpack-merge "^5.8.0"
     webpack-node-externals "^3.0.0"
 
-"@nrwl/react@14.5.7":
+"@nrwl/react@14.5.7", "@nrwl/react@^14.4.2":
   version "14.5.7"
   resolved "https://registry.yarnpkg.com/@nrwl/react/-/react-14.5.7.tgz#2beeebfdcd52343d5f160b5ab17d7cfddb745cb1"
   integrity sha512-9wbK+LJRFfuQm/wstPIUoe17tOIegpI8NT0fIjEzjmAbnqf/mQ1g+YIU1kflYKGTLxtdHG7sOgzZL41gHQQm2w==
@@ -1664,6 +1664,16 @@
     url-loader "^4.1.1"
     webpack "^5.58.1"
     webpack-merge "^5.8.0"
+
+"@nrwl/remix@^14.4.2":
+  version "14.4.2"
+  resolved "https://registry.yarnpkg.com/@nrwl/remix/-/remix-14.4.2.tgz#84ee9da5fc5dcf98b5a394ca4c6f459b81b243b3"
+  integrity sha512-WktXTzUH+eWXsQ+l3buT3BFWWciQFfMnBRh4EcBPHo/m4SGTyAnrn3TYYS6zUaNsmTrxRhRb+6E/6OA/hcYEEw==
+  dependencies:
+    "@nrwl/devkit" "^14.4.2"
+    "@nrwl/js" "^14.4.2"
+    "@nrwl/react" "^14.4.2"
+    tslib "^2.3.1"
 
 "@nrwl/storybook@14.5.7":
   version "14.5.7"
