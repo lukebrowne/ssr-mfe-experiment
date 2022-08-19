@@ -7,11 +7,12 @@ export async function action({ request }: { request: Request }) {
 
   const form = await request.formData();
 
-  const id = form.get('productId') as string;
+  const name = form.get('name') as string;
+  const price = parseFloat(form.get('price') as string).toFixed(2);
 
   const products = session.get('products') as string[] | undefined;
 
-  session.set('products', [...(products || []), id]);
+  session.set('products', [...(products || []), { name, price }]);
 
   return redirect('http://localhost:8080/index', {
     headers: {
@@ -20,7 +21,7 @@ export async function action({ request }: { request: Request }) {
   });
 }
 
-type Products = Record<string, number>;
+type Products = { name: string; price: number }[];
 
 export async function loader({
   request,
@@ -29,33 +30,29 @@ export async function loader({
 }): Promise<Products> {
   const session = await getSession(request.headers.get('Cookie'));
 
-  const allProducts = session.get('products') || [];
-
-  // ["0", "1", "2", "1"] -> { "0": 1, "1": 2, "2": 1}
-  const products = allProducts.reduce(
-    (products: Products, product: string) => ({
-      ...products,
-      [product]: 1 + (products[product] || 0),
-    }),
-    {}
-  );
-
-  return products;
+  const rawProducts = session.get('products') || [];
+  return rawProducts.map(({ price, ...rest }: Record<string, string>) => ({
+    price: parseFloat(price),
+    ...rest,
+  }));
 }
 
 export default function Index() {
   const products = useLoaderData<Products>();
 
+  const total = products.reduce((total, { price }) => total + price, 0);
+
   return (
     <section style={{ border: '5px solid #44AF69', padding: '20px' }}>
       <h2>Cart</h2>
       <ul>
-        {Object.entries(products).map(([id, quantity]) => (
-          <li key={id}>
-            {id} x {quantity}
+        {products.map(({ name, price }, index) => (
+          <li key={index}>
+            {name} @ {price} GBP
           </li>
         ))}
       </ul>
+      <p className="blink">Total: {total.toFixed(2)} GBP</p>
     </section>
   );
 }

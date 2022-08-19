@@ -27,6 +27,7 @@ export default function Products({ params }) {
           <p className="blink" style={{ fontSize: '30px', color: '#FF0000' }}>
             THIS INFORMATION IS OUT OF DATE
           </p>{' '}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="spin"
             src="https://i2-prod.manchestereveningnews.co.uk/incoming/article14444584.ece/ALTERNATES/s615b/409.png"
@@ -44,15 +45,20 @@ export default function Products({ params }) {
                 .toLocaleLowerCase()
                 .startsWith(query.toLocaleLowerCase())
           )
-          .map((product, index) => (
-            <li key={index}>
-              {product.name} - {(product.price / rate).toFixed(2)} GBP
-              <form method="POST" action="http://localhost:3000?index">
-                <input hidden name="productId" value={product.name} readOnly />
-                <button type="submit">Add to Cart</button>
-              </form>
-            </li>
-          ))}
+          .map((product, index) => {
+            const price = (product.price / rate).toFixed(2);
+
+            return (
+              <li key={index}>
+                {product.name} - {price} GBP
+                <form method="POST" action="http://localhost:3000?index">
+                  <input hidden name="name" value={product.name} readOnly />
+                  <input hidden name="price" value={price} readOnly />
+                  <button type="submit">Hold at price</button>
+                </form>
+              </li>
+            );
+          })}
       </ul>
     </>
   );

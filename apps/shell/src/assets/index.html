@@ -8,6 +8,56 @@
         animation: blink 1s linear infinite;
       }
 
+      button,
+      p,
+      img {
+        transition: all 0.25s;
+      }
+      img:hover {
+        transform: rotate(180deg);
+      }
+      p:hover {
+        transform: scale(0.25);
+      }
+      button:hover {
+        transform: scale(2);
+      }
+
+      .center {
+        margin: auto;
+      }
+
+      html {
+        background-image: url('https://as2.ftcdn.net/v2/jpg/04/33/13/29/1000_F_433132962_OCrXLAxXXo1oGDN0N5tUzS5z66KO2WVG.jpg');
+        color: white;
+        font-size: 32px;
+      }
+
+      button {
+        align-items: center;
+        background-image: linear-gradient(
+          144deg,
+          #af40ff,
+          #5b42f3 50%,
+          #00ddeb
+        );
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: flex;
+        font-family: Phantomsans, sans-serif;
+        font-size: inherit;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
       @keyframes blink {
         50% {
           opacity: 0;
@@ -33,19 +83,77 @@
         font-size: 28px;
         text-align: center;
         color: #990012;
-        text-shadow: 5px 5px 10px orangered;
+        text-shadow: 5px 5px 10px yellow;
       "
     >
       <img
         src="https://i.imgur.com/lxFmo5S.jpg"
         alt="Harold and wife drinking wine"
       />
-      <h1>Welcome to Harold's wine shop</h1>
+      <h1>Welcome to The Harold's Wine Shop</h1>
       <img
         src="https://i.imgur.com/lxFmo5S.jpg"
         alt="Harold and wife drinking wine"
       />
     </header>
+    <p>
+      <strong>Th</strong>e <strong>H</strong>arold's <strong>Wi</strong>ne
+      <strong>Sho</strong>p <strong>a</strong>wards <strong>is</strong>
+      <strong>o</strong>ne <strong>of</strong> <strong>t</strong>he
+      <strong>uns</strong>ung <strong>her</strong>oes <strong>o</strong>f
+      <strong>ou</strong>r <strong>economy</strong>, <strong>t</strong>hose
+      <strong>sma</strong>ll <strong>bu</strong>t <em>beautiful</em>,
+      <strong>dyn</strong>amic <strong>a</strong>nd <strong>exci</strong>ting
+      <strong>comp</strong>anies <strong>do</strong>ing <strong>might</strong>y
+      <strong>thi</strong>ngs.
+    </p>
+    <p>
+      !! <strong>Th</strong>e <strong>Ha</strong>rold's <strong>Wi</strong>ne
+      <strong>Sh</strong>op <strong>ha</strong>s <strong>be</strong>en
+      <strong>im</strong>pacted <strong>by</strong> <strong>th</strong>e
+      <strong>fl</strong>uctuating <strong>Au</strong>strailian
+      <strong>Do</strong>llar !!
+    </p>
+    <img
+      src="https://media2.giphy.com/media/ZHXz9MZbJI1YA/200.gif"
+      alt="Mmmm cozy"
+      style="width: 100%"
+    />
+    <div class="center" style="display: flex">
+      <img
+        src="https://media.istockphoto.com/photos/wine-drinker-picture-id91358028"
+        alt="wine drinker"
+        style="width: 400px"
+      />
+      <img
+        src="https://images.askmen.com/top_10/entertainment/top-10-ways-to-tell-you-have-a-drinking-problem_617424.jpg"
+        alt="wine drinker"
+        style="width: 400px"
+      />
+      <img
+        src="https://previews.123rf.com/images/petertt/petertt1309/petertt130900203/22284918-woman-with-a-very-large-glass-of-red-wine.jpg"
+        alt="wine drinker"
+        style="width: 400px"
+      />
+    </div>
+    <div>
+      <p>
+        <strong>Or</strong>der 50 <strong>bo</strong>ttles <strong>or</strong>
+        <strong>mo</strong>re <strong>an</strong>d <strong>ge</strong>t
+        <strong>an</strong> <strong>ex</strong>clusive <strong>gla</strong>ss
+        <strong>FR</strong>EE #BarginsBargins
+      </p>
+      <img
+        src="https://www.craftersvinyl.co.uk/image-smp/live-laugh-love-wine-glass-vinyl-sticker_12007_900x900.jpg"
+        alt="live laugh love"
+        style="display: block; margin: auto; width: 300px"
+      />
+    </div>
+    <p>
+      <strong>Yo</strong>u <strong>ma</strong>y <strong>se</strong>e
+      <strong>pr</strong>ices <strong>ch</strong>ange <strong>fr</strong>om
+      <strong>ti</strong>me <strong>to</strong> <strong>ti</strong>me
+    </p>
     <fragment id="search" src="http://localhost:3333"></fragment>
     <fragment primary id="products" src="http://localhost:4201"></fragment>
     <fragment id="cart" src="http://localhost:3000"></fragment>
